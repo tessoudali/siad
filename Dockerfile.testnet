@@ -12,7 +12,7 @@ RUN apk update \
 RUN git status > /dev/null
 RUN make testnet
 
-FROM alpine:latest
+FROM alpine:3.20.3
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=build /app/release /
